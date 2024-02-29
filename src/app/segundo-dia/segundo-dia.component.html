@@ -1,0 +1,107 @@
+<!-- <p>segundo-dia works!</p>
+<button
+    class="btn btn-primary"
+    (click)="clickButton('success')"
+>
+    cambios
+</button>
+<div>
+    <h3>Botones usando ngif</h3>
+    <div *ngIf="variable === 'success'">
+        <button class="btn btn-success">success</button>
+    </div>
+    <div *ngIf="variable === 'danger'">
+        <button class="btn btn-danger">danger</button>
+    </div>
+</div>
+<hr>
+<div>
+    <h3>
+        Boton utilizado con una clase con una variable
+    </h3>
+    <button [class]="btn_class">class</button>
+</div>
+<hr>
+<div>
+    <h3>Boton utilizado con ngclass</h3>
+    <button
+        class="btn"
+        [ngClass]="{'btn-success': variable === 'success'}"
+    >
+        success
+    </button>
+</div>
+<div>
+    <h3>Boton utilizando operador terneario</h3>
+    <button [class]="variable === 'success' ? 'btn btn-success' :'btn btn-danger'">{{variable}}</button>
+</div>
+
+<div *ngIf="variable === 'hola'">{{variable}}</div>
+<hr>
+
+<ul *ngFor="let itemuser of user">
+    <li>{{itemuser.name}}</li>
+    <li>{{itemuser.descripcion}}</li>
+</ul>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let itemuser of user">
+            <th>{{itemuser.name}}</th>
+            <td>{{itemuser.descripcion}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<h1>INPUTS NO REACTIVOS</h1>
+<span>Nombre</span>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="name"
+>
+<span>Descripcion</span>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="description"
+>
+<div class="card bg-dark text-white">
+    <h3>{{name}}</h3>
+    <div class="card-body">
+        <small>{{description}}</small>
+    </div>
+</div>
+<button
+    class="btn btn-success"
+    (click)="submitForm()"
+>
+    Mostrar los valores en consola
+</button>
+<hr>
+<h1>INPUTS REACTIVOS</h1>
+
+<form [formGroup]="formulariouser">
+    <span>Nombre</span>
+    <input
+        type="text"
+        formControlName="name"
+    >
+    <span>Descripcion</span>
+    <input
+        type="text"
+        formControlName="description"
+    >
+    <button
+        class="btn btn-success"
+        (click)="submitForm()"
+    >
+        submitform
+    </button>
+</form>
+
